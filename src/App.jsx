@@ -8,7 +8,23 @@ import { TaskContextProvider } from "./context/TaskContext";
 import Navbar from "./components/Navbar";
 
 function App() {
-  return (
+  
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (!session) {
+        navigate("/react-vite");
+        console.log("App Desconectado",session, event)
+      } else {
+        navigate("/Home");
+        console.log("App Conectado",session, event)
+      }
+    })
+
+    }, []);
+  
+  return (  
     <div className="App">
       <TaskContextProvider>
         <Navbar/>
