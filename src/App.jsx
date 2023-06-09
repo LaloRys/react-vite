@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 import {Login} from "./pages/Login";
@@ -31,11 +31,15 @@ function App() {
         <Navbar/>
 
         <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
+          <BrowserRouter
+          basename={import.meta.env.DEV ? '/' : '/react-vite/'}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         </div>
       </TaskContextProvider>
     </div>
