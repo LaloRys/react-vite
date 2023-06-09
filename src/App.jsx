@@ -28,9 +28,7 @@ function App() {
   return (
     <div className="App">
       <TaskContextProvider>
-        <Navbar/>
-
-        <div className="container">
+        <Navbar/>  
           <BrowserRouter
           basename={import.meta.env.DEV ? '/' : '/react-vite/'}
           >
@@ -40,7 +38,6 @@ function App() {
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
-        </div>
       </TaskContextProvider>
     </div>
   );
