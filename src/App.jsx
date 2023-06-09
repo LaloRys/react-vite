@@ -1,6 +1,5 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
 import {Login} from "./pages/Login";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
@@ -17,22 +16,23 @@ function App() {
         navigate("/Login");
         console.log("App Desconectado",session, event)
       } else {
-        navigate("/");
+        navigate("/Home");
         console.log("App Conectado",session, event)
       }
     })
 
     }, []);
 
-    
+
   return (
     <div className="App">
       <TaskContextProvider>
         <Navbar/>
 
         <div className="container">
+        
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
@@ -40,6 +40,8 @@ function App() {
       </TaskContextProvider>
     </div>
   );
+
+
 }
 
 export default App;

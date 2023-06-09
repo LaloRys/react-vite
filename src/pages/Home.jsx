@@ -3,12 +3,12 @@ import { supabase } from "../supabase/client";
 import TaskForm from "../components/TaskForm";
 import { useNavigate } from "react-router-dom";
 import TaskList from "../components/TaskList";
-import { useTasks } from "../context/TaskContext";
+// import { useTasks } from "../context/TaskContext";
 
 import FaceIcon from "@mui/icons-material/Face";
 
 export function Home() {
-  const {} = useTasks();
+  // const {} = useTasks();
 
   const navigate = useNavigate();
   const [user, setUser] = useState(null);

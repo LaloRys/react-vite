@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/Home">
           Supabase React
         </Link>
         <button

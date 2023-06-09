@@ -34,7 +34,7 @@ export function Login() {
     supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user);
       if (user) {
-        navigate("/");
+        navigate("/Home");
         console.log("Login usuario conectado");
       }
     });
