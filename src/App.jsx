@@ -8,48 +8,38 @@ import { TaskContextProvider } from "./context/TaskContext";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (!session) {
-        navigate("/Login");
-        console.log("App Desconectado",session, event)
-      } else {
-        navigate("/Home");
-        console.log("App Conectado",session, event)
-      }
-    })
+  // useEffect(() => {
+  //   supabase.auth.onAuthStateChange((event, session) => {
+  //     if (!session) {
+  //       navigate("/react-vite");
+  //       console.log("App Desconectado",session, event)
+  //     } else {
+  //       navigate("/Home");
+  //       console.log("App Conectado",session, event)
+  //     }
+  //   })
 
-    }, []);
+  //   }, []);
 
 
   return (
     <div className="App">
       <TaskContextProvider>
-<<<<<<< HEAD
         <Navbar/>
 
         <div className="container">
-        
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-        </div>
-=======
-        <Navbar/>  
-          <BrowserRouter
-          basename={'/react-vite'}
+        <BrowserRouter
+          basename={import.meta.env.DEV ? '/' : '/react-vite'}
           >
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Login" element={<Login />} />
+              <Route path="/Home" element={<Home />} />
+              <Route path="/react-vite" element={<Login />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
->>>>>>> b9bb96bb3d6333c540619cc12bead90d7409ad7a
+        </div>
       </TaskContextProvider>
     </div>
   );

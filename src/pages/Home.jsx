@@ -24,7 +24,7 @@ export function Home() {
     session();
 
     if (!session) {
-      navigate("/Login");
+      navigate("/react-vite");
       console.log("Home", session, event);
     }
     //   supabase.auth.onAuthStateChange((event, session) => {
