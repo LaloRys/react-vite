@@ -30,7 +30,7 @@ function App() {
       <TaskContextProvider>
         <Navbar/>  
           <BrowserRouter
-          basename={'/react-vite/'}
+          basename={'/react-vite'}
           >
             <Routes>
               <Route path="/" element={<Home />} />
