@@ -32,7 +32,7 @@ function App() {
         <div className="container">
       
         <BrowserRouter
-          basename={import.meta.env.DEV ? '/' : '/react-vite/Login'}
+          basename={"/Login"}
           >
             <Routes>
               <Route path="/Home" element={<Home />} />
