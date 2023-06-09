@@ -14,7 +14,7 @@ function App() {
         <Navbar/>
         <div className="container">
         <BrowserRouter
-          basename={import.meta.env.DEV ? '/' : '/react-vite'}
+          basename={import.meta.env.DEV ? '/' : '/react-vite/'}
           >
             <Routes>
               <Route path="/Home" element={<Home />} />
