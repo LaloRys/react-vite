@@ -8,23 +8,6 @@ import { TaskContextProvider } from "./context/TaskContext";
 import Navbar from "./components/Navbar";
 
 function App() {
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     supabase.auth.onAuthStateChange((event, session) => {
-//       if (!session) {
-//         navigate("/Login");
-//         console.log("App Desconectado",session, event)
-//       } else {
-//         navigate("/Home");
-//         console.log("App Conectado",session, event)
-//       }
-//     })
-
-//     }, []);
-
-
-
   return (
     <div className="App">
       <TaskContextProvider>
@@ -38,6 +21,7 @@ function App() {
               <Route path="/react-vite" element={<Login />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
+
           </BrowserRouter>
 
         </div>
