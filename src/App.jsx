@@ -7,27 +7,25 @@ import Navbar from "./components/Navbar";
 
 function App() {
   
-  return (
+  return (  
     <div className="App">
       <TaskContextProvider>
         <Navbar/>
-
         <div className="container">
         <BrowserRouter
-          basename={import.meta.env.DEV ? '/' : '/react-vite'}
+          basename={import.meta.env.DEV ? '/' : '/react-vite/'}
           >
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/Home" element={<Home />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
+
           </BrowserRouter>
         </div>
       </TaskContextProvider>
     </div>
   );
-
-
 }
 
 export default App;
